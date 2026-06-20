@@ -1,0 +1,35 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ],
+  "rewrites": [
+    { "source": "/events",      "destination": "/pages/events.html" },
+    { "source": "/community",   "destination": "/pages/community.html" },
+    { "source": "/guides",      "destination": "/pages/guides.html" },
+    { "source": "/classifieds", "destination": "/pages/classifieds.html" },
+    { "source": "/emergency",   "destination": "/guides/connect/emergency.html" },
+    { "source": "/arrive",      "destination": "/guides/arrive/index.html" },
+    { "source": "/live",        "destination": "/guides/live/index.html" },
+    { "source": "/work",        "destination": "/guides/work/index.html" },
+    { "source": "/explore",     "destination": "/guides/explore/index.html" }
+  ]
+}

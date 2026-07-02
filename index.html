@@ -228,8 +228,21 @@
 
     </div>
 
-    <div style="text-align:center;margin-top:28px;">
-      <a href="pages/events.html" class="btn btn-ghost"><i class="ti ti-calendar" aria-hidden="true"></i> See all events →</a>
+    <!-- Event count + pagination -->
+    <div id="events-counter" style="text-align:center;font-size:13px;color:var(--muted);margin-top:20px;min-height:20px;"></div>
+
+    <div style="text-align:center;margin-top:16px;display:flex;flex-direction:column;align-items:center;gap:12px;">
+      <button id="events-show-more" class="btn btn-ghost"
+        style="display:none;flex-direction:column;align-items:center;gap:2px;min-width:220px;">
+        <span style="display:flex;align-items:center;gap:7px;">
+          <i class="ti ti-chevrons-down" aria-hidden="true"></i>
+          <span class="show-more-text">Show more events</span>
+        </span>
+        <span class="show-more-count" style="font-size:11.5px;font-weight:400;color:var(--muted);"></span>
+      </button>
+      <a href="pages/events.html" class="btn btn-ghost btn-sm">
+        <i class="ti ti-calendar" aria-hidden="true"></i> See full events calendar →
+      </a>
     </div>
   </div>
 </section>

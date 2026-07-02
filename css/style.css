@@ -207,3 +207,26 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); letter-spacing: -.02em; }
 @media (max-width: 500px) {
   .footer-grid { grid-template-columns: 1fr; }
 }
+
+/* ---- SHOW MORE / PAGINATION ---- */
+#events-show-more {
+  display: none; /* JS controls this */
+  cursor: pointer;
+}
+#events-show-more:hover .show-more-text {
+  color: var(--primary);
+}
+#events-show-more.loading {
+  opacity: .6;
+  pointer-events: none;
+}
+#events-show-more.loading .ti-chevrons-down {
+  animation: bounce 0.6s ease infinite alternate;
+}
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(4px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #events-show-more.loading .ti-chevrons-down { animation: none; }
+}
